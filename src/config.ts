@@ -1,7 +1,7 @@
 // Cấu hình chung của website. Chỉ cần sửa file này khi đổi tên miền, form hoặc bản đồ.
 
 /** Tên miền chính thức (không có dấu / ở cuối). Dùng cho canonical, og:image, sitemap. */
-export const SITE_URL = "https://cokhinguyenthang.vn";
+export const SITE_URL = "https://www.cokhinguyenthang.com";
 
 /**
  * Mã form Formspree (phần cuối của endpoint https://formspree.io/f/XXXXXXXX).
