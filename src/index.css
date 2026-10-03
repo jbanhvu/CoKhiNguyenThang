@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  QUY TẮC TRÌNH BÀY CHỮ (áp dụng cho toàn site)
+  ------------------------------------------------
+  1. CHỮ IN HOA chỉ dùng cho nhãn nhỏ: .eyebrow phía trên tiêu đề và nhãn danh mục trên thẻ dự án.
+     Mọi tiêu đề, nút, menu, tiêu đề bảng đều viết hoa chữ cái đầu câu.
+  2. Cấp tiêu đề:
+     .hero-title     H1 của từng trang, nằm trên ảnh nền
+     .section-title  H2 mở đầu mỗi khối nội dung
+     .card-title     H3 trong thẻ, bảng, danh sách
+  3. Đoạn văn: .hero-copy trên nền tối, .section-copy dưới tiêu đề khối, .body-copy cho nội dung dài.
+  4. Nút: .btn-primary (vàng, hành động chính), .btn-navy (xanh), .btn-outline (viền trắng trên nền tối).
+  5. Khối nội dung: .section-pad, xen kẽ nền trắng và nền surface để phân tách.
+*/
+
+:root {
+  color: #1a1a1a;
+  background: #f5f7fa;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  overflow-x: hidden;
+  font-family: "Be Vietnam Pro", Inter, system-ui, sans-serif;
+  background: #f5f7fa;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+a,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+section {
+  scroll-margin-top: 88px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-pad {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+
+  .eyebrow {
+    @apply mb-3 text-xs font-bold uppercase tracking-[0.18em] text-blue sm:text-sm;
+  }
+
+  .eyebrow-light {
+    @apply mb-3 text-xs font-bold uppercase tracking-[0.18em] text-yellow sm:text-sm;
+  }
+
+  .hero-title {
+    @apply text-[2rem] font-extrabold leading-tight text-white sm:text-5xl lg:text-6xl;
+    text-wrap: balance;
+  }
+
+  .hero-copy {
+    @apply mt-5 max-w-2xl text-base leading-8 text-white/90 sm:text-lg;
+  }
+
+  .section-title {
+    @apply text-2xl font-extrabold leading-tight text-navy sm:text-4xl;
+    text-wrap: balance;
+  }
+
+  .section-copy {
+    @apply mt-4 max-w-3xl text-base leading-7 text-muted sm:text-lg;
+  }
+
+  .card-title {
+    @apply text-lg font-bold leading-snug text-navy;
+  }
+
+  .body-copy {
+    @apply text-base leading-8 text-slate-700;
+  }
+
+  .btn-base {
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-bold transition hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2;
+  }
+
+  .btn-primary {
+    @apply btn-base bg-yellow text-navy shadow-sm hover:brightness-105 focus-visible:ring-yellow;
+  }
+
+  .btn-navy {
+    @apply btn-base bg-navy text-white hover:bg-blue focus-visible:ring-navy;
+  }
+
+  .btn-outline {
+    @apply btn-base border border-white/70 text-white hover:bg-white hover:text-navy focus-visible:ring-white focus-visible:ring-offset-navy;
+  }
+
+  .industrial-card {
+    @apply rounded-lg border border-slate-200 bg-white shadow-sm transition duration-200 hover:-translate-y-1 hover:shadow-industrial;
+  }
+
+  .field {
+    @apply min-h-11 w-full rounded-md border border-slate-300 bg-white px-3 text-base text-ink outline-none transition focus:border-blue focus:ring-2 focus:ring-blue/20;
+  }
+
+  .field-label {
+    @apply grid gap-2 text-sm font-semibold text-navy;
+  }
+}
