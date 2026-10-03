@@ -68,7 +68,7 @@ export function Footer() {
             <li className="flex gap-3">
               <MessageCircle className="mt-0.5 h-4 w-4 shrink-0 text-yellow" />
               <a href={company.zaloHref} target="_blank" rel="noopener noreferrer" className="hover:text-white">
-                Zalo: {company.phones[0]}
+                Zalo: {company.zaloPhone}
               </a>
             </li>
             <li className="flex gap-3">

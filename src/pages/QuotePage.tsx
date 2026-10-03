@@ -47,7 +47,7 @@ export function QuotePage() {
               <p className="mt-2 text-sm leading-6 text-white/80">Gửi ảnh chụp bản vẽ qua Zalo là cách nhanh nhất.</p>
               <div className="mt-5 grid gap-3">
                 <a href={company.zaloHref} target="_blank" rel="noopener noreferrer" className="btn-primary">
-                  <MessageCircle className="h-4 w-4" /> Nhắn Zalo {company.phones[0]}
+                  <MessageCircle className="h-4 w-4" /> Nhắn Zalo {company.zaloPhone}
                 </a>
                 <a href={company.phoneHref} className="btn-outline">
                   <Phone className="h-4 w-4" /> Gọi {company.phones[0]}

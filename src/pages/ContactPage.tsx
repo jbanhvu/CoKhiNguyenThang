@@ -7,7 +7,7 @@ import { useSeo } from "../routing/seo";
 
 const channels = [
   { label: "Hotline", value: company.phones.join(" – "), note: "Gọi trực tiếp kỹ thuật", icon: Phone, href: company.phoneHref },
-  { label: "Zalo", value: company.phones[0], note: "Gửi ảnh bản vẽ nhanh nhất", icon: MessageCircle, href: company.zaloHref, external: true },
+  { label: "Zalo", value: company.zaloPhone, note: "Gửi ảnh bản vẽ nhanh nhất", icon: MessageCircle, href: company.zaloHref, external: true },
   { label: "Email", value: company.email, note: "Gửi file bản vẽ dung lượng lớn", icon: Mail, href: company.emailHref },
 ];
 

@@ -102,7 +102,7 @@ export function QuotationForm() {
         </p>
         {status.fileSkipped && (
           <p className="mx-auto mt-4 max-w-md rounded-md bg-amber-50 p-3 text-sm leading-6 text-amber-800">
-            File bản vẽ chưa đính kèm được. Vui lòng gửi file qua Zalo {company.phones[0]} hoặc email {QUOTE_EMAIL}.
+            File bản vẽ chưa đính kèm được. Vui lòng gửi file qua Zalo {company.zaloPhone} hoặc email {QUOTE_EMAIL}.
           </p>
         )}
         <button type="button" onClick={() => setStatus({ kind: "idle" })} className="btn-navy mt-6">
