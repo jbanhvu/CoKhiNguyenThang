@@ -7,7 +7,7 @@ import sharp from "sharp";
 const SRC = "img";
 const OUT = "public/images";
 
-// Hậu tố hash của ảnh gốc -> tên file có nghĩa
+// Hậu tố hash của ảnh gốc -> tên file có nghĩa (có thể là mảng nếu một ảnh dùng cho nhiều tên)
 const names = {
   f638c2bc: "dau-noi-ren-inox",
   d7dc5486: "dia-banh-rang-hanh-tinh",
@@ -18,11 +18,8 @@ const names = {
   "782f6c00": "truc-bac-inox-2",
   b896c1fb: "banh-rang-tren-may",
   "39bdd947": "ban-ve-3d-gia-do",
-  ed89a89c: "bac-ong-tai-xuong",
-  "7d1f70d0": "bac-ong-tai-xuong-2",
-  "585978ca": "banh-rang-tai-xuong",
+  "585978ca": ["banh-rang-tai-xuong", "banh-rang-tai-xuong-2", "bac-ong-tai-xuong", "bac-ong-tai-xuong-2"], // 1 ảnh gốc dùng cho nhiều tên
   "506b67f9": "vong-bac-duong-kinh-lon",
-  "9d97700e": "banh-rang-tai-xuong-2",
   bbeea7cc: "luoi-loc-vanh-inox",
   "406f959e": "tien-mat-bich",
   "1eadd2af": "tien-chi-tiet-tron-xoay",
@@ -49,11 +46,13 @@ fs.mkdirSync(OUT, { recursive: true });
 
 for (const file of fs.readdirSync(SRC)) {
   const hash = file.replace(/\.jpg$/i, "").slice(-8);
-  const name = names[hash];
-  if (!name) continue;
+  const mapped = names[hash];
+  if (!mapped) continue;
   const input = path.join(SRC, file);
-  await sharp(input).rotate().resize({ width: 1400, height: 1400, fit: "inside", withoutEnlargement: true }).webp({ quality: 72 }).toFile(path.join(OUT, `${name}.webp`));
-  await sharp(input).rotate().resize({ width: 640, height: 640, fit: "inside", withoutEnlargement: true }).webp({ quality: 68 }).toFile(path.join(OUT, `${name}-sm.webp`));
+  for (const name of [mapped].flat()) {
+    await sharp(input).rotate().resize({ width: 1400, height: 1400, fit: "inside", withoutEnlargement: true }).webp({ quality: 72 }).toFile(path.join(OUT, `${name}.webp`));
+    await sharp(input).rotate().resize({ width: 640, height: 640, fit: "inside", withoutEnlargement: true }).webp({ quality: 68 }).toFile(path.join(OUT, `${name}-sm.webp`));
+  }
 }
 
 await sharp(path.join(SRC, "Logo.jpg")).resize({ width: 256, height: 256, fit: "inside" }).webp({ quality: 90 }).toFile(path.join(OUT, "logo.webp"));
