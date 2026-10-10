@@ -1,4 +1,4 @@
-import { Menu, Phone, X } from "lucide-react";
+﻿import { Menu, Phone, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { company, logoSrc, navItems } from "../data/siteData";
 import { Link, usePathname } from "../routing/router";
@@ -18,6 +18,16 @@ export function Header() {
   useEffect(() => setOpen(false), [path]);
 
   const isActive = (href: string) => (href === "/" ? path === "/" : path === href || path.startsWith(`${href}/`));
+  const homeAnchors: Record<string, string> = {
+    "/": "#home",
+    "/gioi-thieu": "#about",
+    "/dich-vu": "#services",
+    "/nang-luc": "#capabilities",
+    "/du-an": "#projects",
+    "/bao-gia": "#rfq",
+    "/lien-he": "#contact",
+  };
+  const navTarget = (href: string) => (path === "/" ? homeAnchors[href] ?? href : href);
 
   return (
     <header
@@ -38,7 +48,7 @@ export function Header() {
           {navItems.map((item) => (
             <Link
               key={item.href}
-              to={item.href}
+              to={navTarget(item.href)}
               aria-current={isActive(item.href) ? "page" : undefined}
               className={`relative py-2 text-sm font-semibold transition hover:text-blue ${
                 isActive(item.href) ? "text-blue after:absolute after:inset-x-0 after:-bottom-0.5 after:h-0.5 after:bg-yellow" : "text-slate-700"
@@ -76,7 +86,8 @@ export function Header() {
             {navItems.map((item) => (
               <Link
                 key={item.href}
-                to={item.href}
+                to={navTarget(item.href)}
+                onClick={() => setOpen(false)}
                 className={`min-h-11 rounded-md px-3 py-3 text-base font-semibold hover:bg-surface ${
                   isActive(item.href) ? "bg-surface text-blue" : "text-navy"
                 }`}

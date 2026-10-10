@@ -1,4 +1,4 @@
-import type { Config } from "tailwindcss";
+﻿import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: ["./index.html", "./src/**/*.{ts,tsx}"],
@@ -8,7 +8,7 @@ const config: Config = {
         navy: "#0B2B5B",
         blue: "#154F8B",
         yellow: "#F4B942",
-        surface: "#F5F7FA",
+        surface: "#FAFBFD",
         ink: "#1A1A1A",
         muted: "#6B7280",
       },
@@ -16,7 +16,7 @@ const config: Config = {
         sans: ['"Be Vietnam Pro"', "Inter", "system-ui", "sans-serif"],
       },
       boxShadow: {
-        industrial: "0 14px 40px rgba(11, 43, 91, 0.12)",
+        industrial: "0 14px 36px rgba(11, 43, 91, 0.09)",
       },
     },
   },

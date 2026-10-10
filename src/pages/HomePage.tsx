@@ -1,9 +1,10 @@
-import { ArrowRight, CheckCircle2, ChevronRight, Phone } from "lucide-react";
+﻿import { ArrowRight, CheckCircle2, ChevronRight, Mail, MapPin, MessageCircle, Phone, ShieldCheck } from "lucide-react";
 import { motion } from "framer-motion";
 import { CtaBand } from "../components/CtaBand";
+import { QuotationForm } from "../components/QuotationForm";
 import { Img } from "../components/Img";
 import { StatsBar } from "../components/StatsBar";
-import { company, industries, pageImages, photo, projects, services, whyUs } from "../data/siteData";
+import { capabilityGroups, company, industries, machineRows, pageImages, photo, projects, qualityTools, quoteChecklist, services, whyUs } from "../data/siteData";
 import { Link } from "../routing/router";
 import { useSeo } from "../routing/seo";
 
@@ -21,7 +22,7 @@ export function HomePage() {
 
   return (
     <main>
-      <section className="relative overflow-hidden bg-navy pb-24 pt-20 text-white">
+      <section id="home" className="relative overflow-hidden bg-navy pb-24 pt-20 text-white">
         <Img photo={pageImages.home} priority sizes="100vw" className="absolute inset-0 h-full w-full object-cover" />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(11,43,91,0.95)_0%,rgba(11,43,91,0.8)_50%,rgba(11,43,91,0.35)_100%)]" />
 
@@ -30,7 +31,7 @@ export function HomePage() {
             <p className="mb-4 inline-block border-l-4 border-yellow pl-3 text-lg font-extrabold uppercase tracking-[0.14em] text-[#F6C768] [text-shadow:0_1px_8px_rgba(0,0,0,0.35)] sm:text-2xl">
               {company.shortName}
             </p>
-            <h1 className="hero-title">Giải pháp cơ khí chính xác nhất – từ đầu đến cuối</h1>
+            <h1 className="hero-title">Giải pháp cơ khí chính xác nhất - từ đầu đến cuối</h1>
             <ol className="mt-5 flex max-w-2xl flex-wrap items-center gap-x-2 gap-y-2 text-base font-semibold text-white/90 sm:text-lg">
               {heroSteps.map((step, i) => (
                 <li key={step} className="flex items-center gap-2">
@@ -61,7 +62,7 @@ export function HomePage() {
 
       <StatsBar variant="overlap" />
 
-      <section className="section-pad bg-surface">
+      <section id="services" className="section-pad bg-surface">
         <div className="container-page">
           <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
             <div>
@@ -102,7 +103,7 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="section-pad bg-white">
+      <section id="about" className="section-pad bg-white">
         <div className="container-page grid gap-12 lg:grid-cols-2 lg:items-center">
           <div className="grid grid-cols-2 gap-4">
             <Img photo={photo("tien-mat-bich", "Tiện mặt bích tại xưởng")} sizes="(min-width: 1024px) 25vw, 50vw" className="aspect-[3/4] w-full rounded-lg object-cover" />
@@ -137,7 +138,7 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="section-pad bg-surface">
+      <section id="projects" className="section-pad bg-surface">
         <div className="container-page">
           <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
             <div>
@@ -176,6 +177,127 @@ export function HomePage() {
               </li>
             ))}
           </ul>
+        </div>
+      </section>
+
+
+      <section id="capabilities" className="section-pad bg-white">
+        <div className="container-page">
+          <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
+            <div>
+              <p className="eyebrow">Năng lực</p>
+              <h2 className="section-title">Máy móc, con người và kiểm soát chất lượng</h2>
+              <p className="section-copy">Đưa phần quan trọng nhất của trang Năng lực ra trang chủ để khách vừa lướt đã thấy khả năng gia công, thiết bị và cách kiểm soát chất lượng.</p>
+            </div>
+            <Link to="/nang-luc" className="inline-flex shrink-0 items-center gap-2 font-bold text-blue hover:text-navy">
+              Xem trang năng lực <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+
+          <div className="mt-10 grid gap-5 lg:grid-cols-3">
+            {capabilityGroups.map((group) => {
+              const Icon = group.icon;
+              return (
+                <article key={group.title} className="rounded-lg border border-slate-200 bg-surface p-6">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-md bg-navy text-yellow">
+                    <Icon className="h-6 w-6" />
+                  </span>
+                  <h3 className="card-title mt-5">{group.title}</h3>
+                  <ul className="mt-4 grid gap-2">
+                    {group.items.slice(0, 4).map((item) => (
+                      <li key={item} className="flex gap-2 text-sm leading-6 text-slate-700">
+                        <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-blue" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </article>
+              );
+            })}
+          </div>
+
+          <div className="mt-10 grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
+            <div className="overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm">
+              <div className="overflow-x-auto">
+                <table className="w-full min-w-[620px] text-left">
+                  <thead className="bg-navy text-sm text-white">
+                    <tr>
+                      <th className="px-5 py-4 font-bold">Thiết bị</th>
+                      <th className="px-5 py-4 text-center font-bold">Số lượng</th>
+                      <th className="px-5 py-4 font-bold">Khả năng</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-200">
+                    {machineRows.slice(0, 5).map(([machine, amount, ability]) => (
+                      <tr key={machine} className="even:bg-surface">
+                        <td className="px-5 py-4 font-semibold text-ink">{machine}</td>
+                        <td className="px-5 py-4 text-center font-bold text-navy">{amount}</td>
+                        <td className="px-5 py-4 text-sm text-slate-700">{ability}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div className="rounded-lg border border-slate-200 bg-surface p-6">
+              <h3 className="card-title flex items-center gap-2"><ShieldCheck className="h-5 w-5 text-blue" /> Kiểm soát chất lượng</h3>
+              <ul className="mt-4 grid gap-3">
+                {qualityTools.slice(0, 6).map((item) => (
+                  <li key={item} className="flex gap-3 text-sm leading-6 text-slate-700">
+                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-blue" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="rfq" className="section-pad border-y border-slate-200 bg-[#F1F6FB] text-ink">
+        <div className="container-page grid gap-10 lg:grid-cols-[0.75fr_1fr] lg:items-start">
+          <div>
+            <p className="eyebrow">Báo giá</p>
+            <h2 className="section-title">Gửi bản vẽ để nhận báo giá trong 24 giờ</h2>
+            <p className="section-copy">Khách hàng có thể thấy ngay form báo giá trên trang chủ, không cần bấm sang trang khác.</p>
+            <ul className="mt-6 grid gap-3">
+              {quoteChecklist.map((item) => (
+                <li key={item} className="flex gap-3 text-sm leading-6 text-slate-700">
+                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-blue" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <QuotationForm />
+        </div>
+      </section>
+
+      <section id="contact" className="section-pad bg-surface">
+        <div className="container-page grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
+          <div>
+            <p className="eyebrow">Liên hệ</p>
+            <h2 className="section-title">Thông tin liên hệ hiển thị ngay trên trang chủ</h2>
+            <p className="section-copy">Khách hàng lướt tới cuối trang vẫn có đủ hotline, Zalo, email và địa chỉ xưởng để liên hệ ngay.</p>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <a href={company.phoneHref} className="industrial-card flex gap-4 p-5">
+              <Phone className="h-6 w-6 shrink-0 text-blue" />
+              <span><span className="block text-sm text-muted">Hotline</span><span className="font-bold text-navy">{company.phones.join(" - ")}</span></span>
+            </a>
+            <a href={company.zaloHref} target="_blank" rel="noopener noreferrer" className="industrial-card flex gap-4 p-5">
+              <MessageCircle className="h-6 w-6 shrink-0 text-blue" />
+              <span><span className="block text-sm text-muted">Zalo</span><span className="font-bold text-navy">{company.phones[0]}</span></span>
+            </a>
+            <a href={company.emailHref} className="industrial-card flex gap-4 p-5">
+              <Mail className="h-6 w-6 shrink-0 text-blue" />
+              <span><span className="block text-sm text-muted">Email</span><span className="break-words font-bold text-navy">{company.email}</span></span>
+            </a>
+            <div className="industrial-card flex gap-4 p-5">
+              <MapPin className="h-6 w-6 shrink-0 text-blue" />
+              <span><span className="block text-sm text-muted">Địa chỉ</span><span className="font-bold leading-6 text-navy">{company.address}</span></span>
+            </div>
+          </div>
         </div>
       </section>
 
