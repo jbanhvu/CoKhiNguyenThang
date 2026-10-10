@@ -40,7 +40,7 @@ function ProjectDetail({ project }: { project: Project }) {
           </Link>
           <span className="mx-2">/</span>
           <Link to="/du-an" className="hover:text-navy">
-            Dự án
+            Sản phẩm
           </Link>
           <span className="mx-2">/</span>
           <span className="text-navy" aria-current="page">
@@ -75,7 +75,7 @@ function ProjectDetail({ project }: { project: Project }) {
                 Gửi yêu cầu tương tự
               </Link>
               <Link to="/du-an" className="btn-navy">
-                <ArrowLeft className="h-4 w-4" /> Tất cả dự án
+                <ArrowLeft className="h-4 w-4" /> Tất cả sản phẩm
               </Link>
             </div>
           </div>
@@ -108,7 +108,7 @@ function ProjectDetail({ project }: { project: Project }) {
 
       <section className="section-pad bg-white">
         <div className="container-page">
-          <h2 className="section-title">Dự án liên quan</h2>
+          <h2 className="section-title">Sản phẩm liên quan</h2>
           <div className="mt-8 grid gap-5 md:grid-cols-3">
             {related.map((item) => (
               <Link key={item.slug} to={`/du-an/${item.slug}`} className="industrial-card group overflow-hidden">

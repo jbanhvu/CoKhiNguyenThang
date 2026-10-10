@@ -56,7 +56,7 @@ export const navItems = [
   { label: "Giới thiệu", href: "/gioi-thieu" },
   { label: "Dịch vụ", href: "/dich-vu" },
   { label: "Năng lực", href: "/nang-luc" },
-  { label: "Dự án", href: "/du-an" },
+  { label: "Sản phẩm", href: "/du-an" },
   { label: "Báo giá", href: "/bao-gia" },
   { label: "Liên hệ", href: "/lien-he" },
 ];
@@ -363,7 +363,7 @@ export const qualityTools = [
 ];
 
 // ---------------------------------------------------------------------------
-// Dự án
+// Sản phẩm
 // ---------------------------------------------------------------------------
 
 export type Project = {

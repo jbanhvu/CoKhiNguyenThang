@@ -142,11 +142,11 @@ export function HomePage() {
         <div className="container-page">
           <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
             <div>
-              <p className="eyebrow">Dự án tiêu biểu</p>
+              <p className="eyebrow">Sản phẩm tiêu biểu</p>
               <h2 className="section-title">Sản phẩm thực tế từ xưởng</h2>
             </div>
             <Link to="/du-an" className="inline-flex shrink-0 items-center gap-2 font-bold text-blue hover:text-navy">
-              Xem tất cả dự án <ArrowRight className="h-4 w-4" />
+              Xem tất cả sản phẩm <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
           <div className="mt-10 grid gap-5 md:grid-cols-3">

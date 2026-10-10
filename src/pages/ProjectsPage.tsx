@@ -13,9 +13,9 @@ export function ProjectsPage() {
   const visible = category === ALL ? projects : projects.filter((item) => item.category === category);
 
   useSeo({
-    title: "Dự án và sản phẩm đã thực hiện",
+    title: "Các sản phẩm đã thực hiện",
     description:
-      "Hình ảnh thực tế các dự án gia công bánh răng, trục, mặt bích inox, con lăn nhựa, đồ gá và phục hồi hộp số cho nhà máy khu vực phía Nam.",
+      "Hình ảnh thực tế các sản phẩm gia công bánh răng, trục, mặt bích inox, con lăn nhựa, đồ gá và phục hồi hộp số cho nhà máy khu vực phía Nam.",
     path: "/du-an",
     image: pageImages.projects.name,
   });
@@ -23,11 +23,11 @@ export function ProjectsPage() {
   return (
     <main>
       <PageHero
-        eyebrow="Dự án"
-        title="Dự án và sản phẩm đã thực hiện"
-        description="Mỗi dự án là một bài toán thực tế của nhà máy: từ chi tiết thay thế gấp đến cụm máy chế tạo mới. Toàn bộ hình ảnh được chụp tại xưởng."
+        eyebrow="Sản phẩm"
+        title="Các sản phẩm đã thực hiện"
+        description="Mỗi sản phẩm là một bài toán thực tế của nhà máy: từ chi tiết thay thế gấp đến cụm máy chế tạo mới. Toàn bộ hình ảnh được chụp tại xưởng."
         image={pageImages.projects}
-        crumbs={[{ label: "Dự án" }]}
+        crumbs={[{ label: "Sản phẩm" }]}
       />
 
       <section className="section-pad bg-white">
