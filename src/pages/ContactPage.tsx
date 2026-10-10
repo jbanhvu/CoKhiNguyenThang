@@ -29,7 +29,7 @@ export function ContactPage() {
         crumbs={[{ label: "Liên hệ" }]}
       />
 
-      <section className="section-pad bg-surface">
+      <section className="section-pad bg-white">
         <div className="container-page">
           <div className="grid gap-5 md:grid-cols-3">
             {channels.map((item) => {

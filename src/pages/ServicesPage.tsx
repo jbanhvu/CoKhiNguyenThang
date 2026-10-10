@@ -76,7 +76,7 @@ export function ServicesPage() {
               <tbody className="divide-y divide-slate-200">
                 {allMaterials.map((row) => (
                   <tr key={row.group} className="bg-white">
-                    <th scope="row" className="w-40 bg-surface px-5 py-4 text-sm font-bold text-navy sm:w-56">
+                    <th scope="row" className="w-40 bg-white px-5 py-4 text-sm font-bold text-navy sm:w-56">
                       {row.group}
                     </th>
                     <td className="px-5 py-4 text-sm leading-6 text-slate-700">{row.items}</td>

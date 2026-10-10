@@ -24,7 +24,7 @@ export function QuotePage() {
         crumbs={[{ label: "Báo giá" }]}
       />
 
-      <section className="section-pad bg-surface">
+      <section className="section-pad bg-white">
         <div className="container-page grid gap-10 lg:grid-cols-[1.35fr_0.65fr] lg:items-start">
           <QuotationForm />
 
@@ -42,17 +42,17 @@ export function QuotePage() {
               </ul>
             </div>
 
-            <div className="rounded-lg bg-navy p-6 text-white">
+            <div className="rounded-lg border border-slate-200 bg-white p-6 text-navy">
               <h2 className="text-lg font-bold">Muốn trao đổi trực tiếp?</h2>
-              <p className="mt-2 text-sm leading-6 text-white/80">Gửi ảnh chụp bản vẽ qua Zalo là cách nhanh nhất.</p>
+              <p className="mt-2 text-sm leading-6 text-slate-700">Gửi ảnh chụp bản vẽ qua Zalo là cách nhanh nhất.</p>
               <div className="mt-5 grid gap-3">
                 <a href={company.zaloHref} target="_blank" rel="noopener noreferrer" className="btn-primary">
                   <MessageCircle className="h-4 w-4" /> Nhắn Zalo {company.zaloPhone}
                 </a>
-                <a href={company.phoneHref} className="btn-outline">
+                <a href={company.phoneHref} className="btn-navy">
                   <Phone className="h-4 w-4" /> Gọi {company.phones[0]}
                 </a>
-                <a href={company.emailHref} className="btn-outline">
+                <a href={company.emailHref} className="btn-navy">
                   <Mail className="h-4 w-4" /> Gửi email
                 </a>
               </div>
@@ -67,7 +67,7 @@ export function QuotePage() {
           <h2 className="section-title">Ba bước đơn giản</h2>
           <ol className="mt-10 grid gap-5 md:grid-cols-3">
             {quoteSteps.map((step, index) => (
-              <li key={step.title} className="relative rounded-lg border border-slate-200 bg-surface p-6">
+              <li key={step.title} className="relative rounded-lg border border-slate-200 bg-white p-6">
                 <span className="text-4xl font-extrabold text-yellow">{index + 1}</span>
                 <h3 className="card-title mt-3">{step.title}</h3>
                 <p className="mt-2 text-sm leading-6 text-muted">{step.text}</p>
@@ -77,7 +77,7 @@ export function QuotePage() {
         </div>
       </section>
 
-      <section className="section-pad bg-surface">
+      <section className="section-pad bg-white">
         <div className="container-page max-w-4xl">
           <p className="eyebrow">Câu hỏi thường gặp</p>
           <h2 className="section-title">Về báo giá và thanh toán</h2>

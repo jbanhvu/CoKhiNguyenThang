@@ -18,7 +18,7 @@
 
 :root {
   color: #1a1a1a;
-  background: #fafbfd;
+  background: #ffffff;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -35,7 +35,7 @@ body {
   min-width: 320px;
   overflow-x: hidden;
   font-family: "Be Vietnam Pro", Inter, system-ui, sans-serif;
-  background: #fafbfd;
+  background: #ffffff;
 }
 
 img {
@@ -84,12 +84,12 @@ section {
   }
 
   .hero-title {
-    @apply text-[2rem] font-extrabold leading-tight text-white sm:text-5xl lg:text-6xl;
+    @apply text-[2rem] font-extrabold leading-tight text-navy sm:text-5xl lg:text-6xl;
     text-wrap: balance;
   }
 
   .hero-copy {
-    @apply mt-5 max-w-2xl text-base leading-8 text-white/90 sm:text-lg;
+    @apply mt-5 max-w-2xl text-base leading-8 text-slate-700 sm:text-lg;
   }
 
   .section-title {
@@ -122,7 +122,7 @@ section {
   }
 
   .btn-outline {
-    @apply btn-base border border-white/70 text-white hover:bg-white hover:text-navy focus-visible:ring-white focus-visible:ring-offset-navy;
+    @apply btn-base border border-navy/25 bg-white text-navy hover:border-navy hover:bg-slate-50 focus-visible:ring-navy;
   }
 
   .industrial-card {

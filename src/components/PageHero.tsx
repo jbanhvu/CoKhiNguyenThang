@@ -20,21 +20,21 @@ export function PageHero({ eyebrow, title, description, image, crumbs = [], chil
   const trail: Crumb[] = [{ label: "Trang chủ", to: "/" }, ...crumbs];
 
   return (
-    <section className="relative overflow-hidden bg-navy pt-20 text-white">
-      <Img photo={image} priority sizes="100vw" className="absolute inset-0 h-full w-full object-cover" />
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(11,43,91,0.95)_0%,rgba(11,43,91,0.82)_50%,rgba(11,43,91,0.45)_100%)]" />
+    <section className="relative overflow-hidden bg-white pt-20 text-navy">
+      <Img photo={image} priority sizes="100vw" className="absolute inset-y-0 right-0 h-full w-full object-cover opacity-20 lg:w-[56%] lg:opacity-80" />
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,#fff_0%,rgba(255,255,255,0.96)_48%,rgba(255,255,255,0.72)_78%,rgba(255,255,255,0.45)_100%)]" />
       <div className="container-page relative py-14 sm:py-20 lg:py-24">
         <nav aria-label="Đường dẫn" className="mb-6">
-          <ol className="flex flex-wrap items-center gap-1 text-sm text-white/70">
+          <ol className="flex flex-wrap items-center gap-1 text-sm text-slate-500">
             {trail.map((crumb, index) => (
               <li key={crumb.label} className="flex items-center gap-1">
                 {index > 0 && <ChevronRight className="h-4 w-4" aria-hidden="true" />}
                 {crumb.to ? (
-                  <Link to={crumb.to} className="hover:text-white">
+                  <Link to={crumb.to} className="hover:text-navy">
                     {crumb.label}
                   </Link>
                 ) : (
-                  <span aria-current="page" className="text-white">
+                  <span aria-current="page" className="text-navy">
                     {crumb.label}
                   </span>
                 )}
@@ -42,7 +42,7 @@ export function PageHero({ eyebrow, title, description, image, crumbs = [], chil
             ))}
           </ol>
         </nav>
-        <p className="eyebrow-light">{eyebrow}</p>
+        <p className="eyebrow">{eyebrow}</p>
         <h1 className="hero-title max-w-4xl">{title}</h1>
         <p className="hero-copy">{description}</p>
         {children && <div className="mt-8 flex flex-col gap-3 sm:flex-row">{children}</div>}

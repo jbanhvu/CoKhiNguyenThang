@@ -61,7 +61,7 @@ function ProjectDetail({ project }: { project: Project }) {
             <h1 className="section-title sm:text-[2.5rem]">{project.title}</h1>
             <p className="section-copy">{project.summary}</p>
 
-            <dl className="mt-8 divide-y divide-slate-200 rounded-lg border border-slate-200 bg-surface">
+            <dl className="mt-8 divide-y divide-slate-200 rounded-lg border border-slate-200 bg-white">
               {facts.map((fact) => (
                 <div key={fact.label} className="grid gap-1 px-5 py-3 sm:grid-cols-[0.8fr_1.2fr] sm:gap-4">
                   <dt className="text-sm text-muted">{fact.label}</dt>
@@ -82,7 +82,7 @@ function ProjectDetail({ project }: { project: Project }) {
         </div>
       </section>
 
-      <section className="section-pad bg-surface">
+      <section className="section-pad bg-white">
         <div className="container-page grid gap-5 lg:grid-cols-3">
           <div className="rounded-lg border border-slate-200 bg-white p-6">
             <p className="eyebrow">Bài toán</p>
@@ -92,7 +92,7 @@ function ProjectDetail({ project }: { project: Project }) {
             <p className="eyebrow">Giải pháp</p>
             <p className="body-copy">{project.solution}</p>
           </div>
-          <div className="rounded-lg bg-navy p-6 text-white">
+          <div className="rounded-lg border border-slate-200 bg-white p-6 text-navy">
             <p className="eyebrow-light">Kết quả</p>
             <ul className="grid gap-3">
               {project.results.map((item) => (

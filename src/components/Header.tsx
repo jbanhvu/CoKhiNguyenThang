@@ -88,8 +88,8 @@ export function Header() {
                 key={item.href}
                 to={navTarget(item.href)}
                 onClick={() => setOpen(false)}
-                className={`min-h-11 rounded-md px-3 py-3 text-base font-semibold hover:bg-surface ${
-                  isActive(item.href) ? "bg-surface text-blue" : "text-navy"
+                className={`min-h-11 rounded-md px-3 py-3 text-base font-semibold hover:bg-white ${
+                  isActive(item.href) ? "bg-white text-blue" : "text-navy"
                 }`}
               >
                 {item.label}

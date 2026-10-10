@@ -39,7 +39,7 @@ export function CapabilitiesPage() {
             {capabilityGroups.map((group) => {
               const Icon = group.icon;
               return (
-                <div key={group.title} className="rounded-lg border border-slate-200 bg-surface p-6">
+                <div key={group.title} className="rounded-lg border border-slate-200 bg-white p-6">
                   <span className="flex h-12 w-12 items-center justify-center rounded-md bg-navy text-yellow">
                     <Icon className="h-6 w-6" />
                   </span>
@@ -59,7 +59,7 @@ export function CapabilitiesPage() {
         </div>
       </section>
 
-      <section className="section-pad bg-surface">
+      <section className="section-pad bg-white">
         <div className="container-page">
           <p className="eyebrow">Thiết bị</p>
           <h2 className="section-title">Bảng năng lực máy móc</h2>
@@ -67,7 +67,7 @@ export function CapabilitiesPage() {
           <div className="mt-10 overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm">
             <div className="overflow-x-auto">
               <table className="w-full min-w-[640px] text-left">
-                <thead className="bg-navy text-sm text-white">
+                <thead className="border-y border-slate-200 bg-white text-sm text-navy">
                   <tr>
                     <th scope="col" className="px-5 py-4 font-bold">
                       Thiết bị
@@ -82,7 +82,7 @@ export function CapabilitiesPage() {
                 </thead>
                 <tbody className="divide-y divide-slate-200">
                   {machineRows.map(([machine, amount, ability]) => (
-                    <tr key={machine} className="even:bg-surface">
+                    <tr key={machine} className="even:bg-white">
                       <td className="px-5 py-4 font-semibold text-ink">{machine}</td>
                       <td className="px-5 py-4 text-center font-bold text-navy">{amount}</td>
                       <td className="px-5 py-4 text-sm text-slate-700">{ability}</td>

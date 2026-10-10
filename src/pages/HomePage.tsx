@@ -22,17 +22,17 @@ export function HomePage() {
 
   return (
     <main>
-      <section id="home" className="relative overflow-hidden bg-navy pb-24 pt-20 text-white">
-        <Img photo={pageImages.home} priority sizes="100vw" className="absolute inset-0 h-full w-full object-cover" />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(11,43,91,0.95)_0%,rgba(11,43,91,0.8)_50%,rgba(11,43,91,0.35)_100%)]" />
+      <section id="home" className="relative overflow-hidden bg-white pb-24 pt-20 text-navy">
+        <Img photo={pageImages.home} priority sizes="100vw" className="absolute inset-y-0 right-0 h-full w-full object-cover opacity-25 lg:w-[58%] lg:opacity-90" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,#fff_0%,rgba(255,255,255,0.96)_43%,rgba(255,255,255,0.72)_72%,rgba(255,255,255,0.42)_100%)]" />
 
         <div className="container-page relative flex min-h-[560px] items-center py-16 lg:min-h-[620px]">
           <motion.div className="max-w-3xl" initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, ease: "easeOut" }}>
-            <p className="mb-4 inline-block border-l-4 border-yellow pl-3 text-lg font-extrabold uppercase tracking-[0.14em] text-[#F6C768] [text-shadow:0_1px_8px_rgba(0,0,0,0.35)] sm:text-2xl">
+            <p className="mb-4 inline-block border-l-4 border-yellow pl-3 text-lg font-extrabold uppercase tracking-[0.14em] text-navy sm:text-2xl">
               {company.shortName}
             </p>
             <h1 className="hero-title">Giải pháp cơ khí chính xác nhất - từ đầu đến cuối</h1>
-            <ol className="mt-5 flex max-w-2xl flex-wrap items-center gap-x-2 gap-y-2 text-base font-semibold text-white/90 sm:text-lg">
+            <ol className="mt-5 flex max-w-2xl flex-wrap items-center gap-x-2 gap-y-2 text-base font-semibold text-navy sm:text-lg">
               {heroSteps.map((step, i) => (
                 <li key={step} className="flex items-center gap-2">
                   {i > 0 && <ChevronRight className="h-4 w-4 shrink-0 text-yellow" aria-hidden />}
@@ -40,7 +40,7 @@ export function HomePage() {
                 </li>
               ))}
             </ol>
-            <ul className="mt-6 grid gap-2 text-sm text-white/90 sm:grid-cols-2">
+            <ul className="mt-6 grid gap-2 text-sm text-slate-700 sm:grid-cols-2">
               {["Dung sai đến ±0,01 mm", "Gia công thép, inox, nhôm, nhựa kỹ thuật", "Ưu tiên chi tiết thay thế khi máy dừng", "Giao hàng, lắp đặt tận nhà máy"].map((item) => (
                 <li key={item} className="flex items-center gap-2">
                   <CheckCircle2 className="h-4 w-4 shrink-0 text-yellow" />
@@ -52,7 +52,7 @@ export function HomePage() {
               <Link to="/bao-gia" className="btn-primary">
                 Nhận báo giá <ArrowRight className="h-4 w-4" />
               </Link>
-              <a href={company.phoneHref} className="btn-outline">
+              <a href={company.phoneHref} className="btn-navy">
                 <Phone className="h-4 w-4" /> Tư vấn trực tiếp miễn phí: {company.phones[0]}
               </a>
             </div>
@@ -62,7 +62,7 @@ export function HomePage() {
 
       <StatsBar variant="overlap" />
 
-      <section id="services" className="section-pad bg-surface">
+      <section id="services" className="section-pad bg-white">
         <div className="container-page">
           <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
             <div>
@@ -138,7 +138,7 @@ export function HomePage() {
         </div>
       </section>
 
-      <section id="projects" className="section-pad bg-surface">
+      <section id="projects" className="section-pad bg-white">
         <div className="container-page">
           <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
             <div>
@@ -172,7 +172,7 @@ export function HomePage() {
           <h2 className="section-title mx-auto max-w-2xl">Đồng hành cùng nhà máy trong nhiều lĩnh vực</h2>
           <ul className="mx-auto mt-10 flex max-w-4xl flex-wrap justify-center gap-3">
             {industries.map((item) => (
-              <li key={item} className="rounded-full border border-slate-200 bg-surface px-5 py-2.5 text-sm font-semibold text-navy">
+              <li key={item} className="rounded-full border border-slate-200 bg-white px-5 py-2.5 text-sm font-semibold text-navy">
                 {item}
               </li>
             ))}
@@ -198,7 +198,7 @@ export function HomePage() {
             {capabilityGroups.map((group) => {
               const Icon = group.icon;
               return (
-                <article key={group.title} className="rounded-lg border border-slate-200 bg-surface p-6">
+                <article key={group.title} className="rounded-lg border border-slate-200 bg-white p-6">
                   <span className="flex h-12 w-12 items-center justify-center rounded-md bg-navy text-yellow">
                     <Icon className="h-6 w-6" />
                   </span>
@@ -220,7 +220,7 @@ export function HomePage() {
             <div className="overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm">
               <div className="overflow-x-auto">
                 <table className="w-full min-w-[620px] text-left">
-                  <thead className="bg-navy text-sm text-white">
+                  <thead className="border-y border-slate-200 bg-white text-sm text-navy">
                     <tr>
                       <th className="px-5 py-4 font-bold">Thiết bị</th>
                       <th className="px-5 py-4 text-center font-bold">Số lượng</th>
@@ -229,7 +229,7 @@ export function HomePage() {
                   </thead>
                   <tbody className="divide-y divide-slate-200">
                     {machineRows.slice(0, 5).map(([machine, amount, ability]) => (
-                      <tr key={machine} className="even:bg-surface">
+                      <tr key={machine} className="even:bg-white">
                         <td className="px-5 py-4 font-semibold text-ink">{machine}</td>
                         <td className="px-5 py-4 text-center font-bold text-navy">{amount}</td>
                         <td className="px-5 py-4 text-sm text-slate-700">{ability}</td>
@@ -239,7 +239,7 @@ export function HomePage() {
                 </table>
               </div>
             </div>
-            <div className="rounded-lg border border-slate-200 bg-surface p-6">
+            <div className="rounded-lg border border-slate-200 bg-white p-6">
               <h3 className="card-title flex items-center gap-2"><ShieldCheck className="h-5 w-5 text-blue" /> Kiểm soát chất lượng</h3>
               <ul className="mt-4 grid gap-3">
                 {qualityTools.slice(0, 6).map((item) => (
@@ -273,7 +273,7 @@ export function HomePage() {
         </div>
       </section>
 
-      <section id="contact" className="section-pad bg-surface">
+      <section id="contact" className="section-pad bg-white">
         <div className="container-page grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
             <p className="eyebrow">Liên hệ</p>

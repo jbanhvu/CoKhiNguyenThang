@@ -54,7 +54,7 @@ function ServiceDetail({ service }: { service: Service }) {
             <h2 className="section-title mt-14">Phạm vi công việc</h2>
             <ul className="mt-6 grid gap-3 sm:grid-cols-2">
               {service.scope.map((item) => (
-                <li key={item} className="flex gap-3 rounded-lg border border-slate-200 bg-surface p-4 text-sm font-medium leading-6 text-ink">
+                <li key={item} className="flex gap-3 rounded-lg border border-slate-200 bg-white p-4 text-sm font-medium leading-6 text-ink">
                   <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-blue" />
                   {item}
                 </li>
@@ -64,7 +64,7 @@ function ServiceDetail({ service }: { service: Service }) {
 
           <aside className="grid content-start gap-6 lg:sticky lg:top-28">
             <div className="overflow-hidden rounded-lg border border-slate-200">
-              <h2 className="bg-navy px-5 py-4 text-lg font-bold text-white">Thông số kỹ thuật</h2>
+              <h2 className="border-b border-slate-200 bg-white px-5 py-4 text-lg font-bold text-navy">Thông số kỹ thuật</h2>
               <dl className="divide-y divide-slate-200 bg-white">
                 {service.specs.map((spec) => (
                   <div key={spec.label} className="grid gap-1 px-5 py-3 sm:grid-cols-[0.9fr_1.1fr] sm:gap-4">
@@ -74,7 +74,7 @@ function ServiceDetail({ service }: { service: Service }) {
                 ))}
               </dl>
             </div>
-            <div className="rounded-lg border border-slate-200 bg-surface p-5">
+            <div className="rounded-lg border border-slate-200 bg-white p-5">
               <h2 className="card-title">Vật liệu</h2>
               <ul className="mt-3 flex flex-wrap gap-2">
                 {service.materials.map((item) => (
@@ -99,7 +99,7 @@ function ServiceDetail({ service }: { service: Service }) {
         </div>
       </section>
 
-      <section className="section-pad bg-surface">
+      <section className="section-pad bg-white">
         <div className="container-page">
           <p className="eyebrow">Hình ảnh thực tế</p>
           <h2 className="section-title">Sản phẩm của dịch vụ này</h2>

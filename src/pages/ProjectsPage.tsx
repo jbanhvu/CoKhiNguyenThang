@@ -30,7 +30,7 @@ export function ProjectsPage() {
         crumbs={[{ label: "Dự án" }]}
       />
 
-      <section className="section-pad bg-surface">
+      <section className="section-pad bg-white">
         <div className="container-page">
           <div className="flex flex-wrap gap-2" role="group" aria-label="Lọc theo danh mục">
             {[ALL, ...projectCategories].map((item) => (
@@ -40,7 +40,7 @@ export function ProjectsPage() {
                 onClick={() => setCategory(item)}
                 aria-pressed={category === item}
                 className={`min-h-10 rounded-full px-4 text-sm font-semibold transition ${
-                  category === item ? "bg-navy text-white" : "border border-slate-300 bg-white text-navy hover:border-navy"
+                  category === item ? "border border-blue bg-white text-blue" : "border border-slate-300 bg-white text-navy hover:border-navy"
                 }`}
               >
                 {item}

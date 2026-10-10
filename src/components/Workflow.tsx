@@ -2,7 +2,7 @@ import { workflow } from "../data/siteData";
 
 export function Workflow() {
   return (
-    <section className="section-pad bg-surface">
+    <section className="section-pad bg-white">
       <div className="container-page">
         <p className="eyebrow">Quy trình làm việc</p>
         <h2 className="section-title">6 bước từ bản vẽ đến bàn giao</h2>

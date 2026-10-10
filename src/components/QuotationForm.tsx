@@ -190,7 +190,7 @@ export function QuotationForm() {
               pickFile(event.dataTransfer.files[0]);
             }}
             className={`flex min-h-28 cursor-pointer flex-col items-center justify-center gap-2 rounded-lg border-2 border-dashed p-4 text-center transition focus:outline-none focus-visible:ring-2 focus-visible:ring-blue ${
-              dragging ? "border-blue bg-blue/5" : "border-slate-300 bg-surface hover:border-blue"
+              dragging ? "border-blue bg-blue/5" : "border-slate-300 bg-white hover:border-blue"
             }`}
           >
             <FileUp className="h-7 w-7 text-blue" />
@@ -199,7 +199,7 @@ export function QuotationForm() {
           </div>
           <input ref={inputRef} name="drawing" type="file" className="sr-only" tabIndex={-1} accept={ACCEPT} onChange={(event) => pickFile(event.currentTarget.files?.[0])} />
           {file && (
-            <p className="mt-2 flex items-center justify-between gap-2 rounded-md bg-surface px-3 py-2 text-sm text-navy">
+            <p className="mt-2 flex items-center justify-between gap-2 rounded-md bg-white px-3 py-2 text-sm text-navy">
               <span className="truncate">{file.name}</span>
               <button type="button" onClick={clearFile} className="shrink-0 text-muted hover:text-red-600" aria-label="Bỏ file đã chọn">
                 <X className="h-4 w-4" />

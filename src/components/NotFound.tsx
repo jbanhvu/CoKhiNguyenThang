@@ -11,7 +11,7 @@ export function NotFound() {
   });
 
   return (
-    <main className="bg-surface pt-20">
+    <main className="bg-white pt-20">
       <section className="container-page flex min-h-[62vh] flex-col items-start justify-center py-20">
         <p className="eyebrow">Lỗi 404</p>
         <h1 className="section-title">Không tìm thấy trang</h1>

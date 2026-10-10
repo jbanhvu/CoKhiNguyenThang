@@ -24,7 +24,7 @@ export const photo = (name: string, alt: string): Photo => ({ name, alt });
 export const photoSrc = (name: string) => `/images/${name}.webp`;
 export const photoSrcSm = (name: string) => `/images/${name}-sm.webp`;
 
-export const logoSrc = "/images/logo.webp";
+export const logoSrc = "/images/logo-transparent.png";
 
 // ---------------------------------------------------------------------------
 // Thông tin doanh nghiệp

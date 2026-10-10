@@ -56,10 +56,10 @@ export function AboutPage() {
         </div>
       </section>
 
-      <section className="section-pad bg-surface">
+      <section className="section-pad bg-white">
         <div className="container-page">
           <div className="grid gap-6 lg:grid-cols-2">
-            <div className="rounded-lg bg-navy p-8 text-white">
+            <div className="rounded-lg border border-slate-200 bg-white p-8 text-navy">
               <p className="eyebrow-light">Sứ mệnh</p>
               <p className="text-xl font-bold leading-8">
                 Giúp nhà máy Việt Nam chủ động nguồn chi tiết và thiết bị cơ khí, giảm phụ thuộc vào phụ tùng nhập khẩu và rút ngắn thời gian dừng máy.
@@ -98,7 +98,7 @@ export function AboutPage() {
         </div>
       </section>
 
-      <section className="section-pad bg-surface">
+      <section className="section-pad bg-white">
         <div className="container-page grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
             <p className="eyebrow">Hồ sơ doanh nghiệp</p>
