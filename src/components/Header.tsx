@@ -18,16 +18,7 @@ export function Header() {
   useEffect(() => setOpen(false), [path]);
 
   const isActive = (href: string) => (href === "/" ? path === "/" : path === href || path.startsWith(`${href}/`));
-  const homeAnchors: Record<string, string> = {
-    "/": "#home",
-    "/gioi-thieu": "#about",
-    "/dich-vu": "#services",
-    "/nang-luc": "#capabilities",
-    "/du-an": "#projects",
-    "/bao-gia": "#rfq",
-    "/lien-he": "#contact",
-  };
-  const navTarget = (href: string) => (path === "/" ? homeAnchors[href] ?? href : href);
+  const navTarget = (href: string) => href;
 
   return (
     <header
